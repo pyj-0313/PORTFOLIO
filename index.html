@@ -1,12 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>박영준 · Full-Stack Developer</title>
+<meta name="description" content="박영준 - 풀스택 개발자 포트폴리오">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>MY PORTFOLIO PAGE</h1>
-    HELLO WORLD
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-brand">
+      <span class="nav-logo">PYJ</span>
+      <span class="nav-name">PARK YOUNGJUN</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" aria-label="다크모드 전환">
+        <svg id="themeIconSun" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg id="themeIconMoon" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" hidden><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+      </button>
+      <a href="resume.pdf" download class="btn btn-primary btn-sm">
+        Resume
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      </a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="hero-eyebrow reveal">안녕하세요!</p>
+        <h1 class="hero-headline reveal">
+          문제를 해결하는<br>
+          <span class="highlight">개발자</span>, 박영준입니다.
+        </h1>
+        <p class="hero-desc reveal">
+          Java와 Spring 기반의 풀스택 개발자로,<br>
+          사용자 경험을 고려한 서비스를 만들고 있습니다.
+        </p>
+        <div class="hero-actions reveal">
+          <a href="#projects" class="btn btn-primary">프로젝트 보기 →</a>
+          <a href="https://github.com/pyj-0313" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            GitHub
+          </a>
+        </div>
+        <div class="hero-info reveal">
+          <span class="info-chip"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> 대한민국, 대구</span>
+          <span class="info-chip"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg> pyjun0313@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="hero-art reveal">
+        <img src="hero-banner.png" alt="박영준의 작업 공간">
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2 class="section-title"><span class="dot">●</span> About Me</h2>
+      </div>
+      <div class="about-grid reveal">
+        <div class="profile-col">
+          <div class="avatar">PY</div>
+          <div class="info-card">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg>
+            </span>
+            <span class="info-text"><span class="info-label">이름</span><span class="info-value">박영준</span></span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+            </span>
+            <span class="info-text"><span class="info-label">이메일</span><span class="info-value">pyjun0313@gmail.com</span></span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+            </span>
+            <span class="info-text"><span class="info-label">GitHub</span><span class="info-value">github.com/pyj-0313</span></span>
+          </div>
+          <div class="info-card">
+            <span class="info-icon">
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span class="info-text"><span class="info-label">위치</span><span class="info-value">대한민국, 대구</span></span>
+          </div>
+        </div>
+
+        <div class="about-card">
+          <p>
+            비전공자로 개발을 시작해 국비 풀스택 과정을 거치며 기본기를 쌓았습니다.
+            기획부터 백엔드, 프론트엔드까지 서비스의 처음과 끝을 직접 만들어보는 과정에 관심이 많고,
+            <strong>Tails</strong> 프로젝트에서 그 과정을 함께 경험했습니다.
+          </p>
+
+          <div class="value-list">
+            <div class="value-item">
+              <span class="value-tag">[비전공, 다시 시작]</span>
+              <p>익숙한 분야를 벗어나 처음부터 다시 배우는 걸 두려워하지 않습니다. 국비 과정 900시간을 채우며 기본기부터 쌓았습니다.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-tag">[처음부터 끝까지]</span>
+              <p>기획에서 문제를 정의하고, 백엔드에서 로직을 설계하고, 프론트엔드에서 화면으로 완성하는 전 과정에 참여하는 것을 좋아합니다.</p>
+            </div>
+            <div class="value-item">
+              <span class="value-tag">[기록하고 개선]</span>
+              <p>막힌 문제를 해결한 과정을 정리해두는 편입니다. Tails 프로젝트 트러블슈팅 기록도 그 결과물입니다.</p>
+            </div>
+          </div>
+
+          <a href="#experience" class="section-link">자세히 보기 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section section-alt" id="skills">
+    <div class="section-inner">
+      <div class="section-head">
+        <h2 class="section-title"><span class="dot">●</span> Skills</h2>
+      </div>
+      <div class="skills-cards">
+        <div class="skill-card reveal">
+          <h3>Backend</h3>
+          <div class="icon-grid">
+            <div class="icon-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+            <div class="icon-item"><i class="devicon-spring-plain colored"></i><span>Spring Boot</span></div>
+            <div class="icon-item"><span class="icon-emoji">🐻</span><span>Hibernate</span></div>
+            <div class="icon-item"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+            <div class="icon-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Frontend</h3>
+          <div class="icon-grid">
+            <div class="icon-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+            <div class="icon-item"><i class="devicon-react-original colored"></i><span>React</span></div>
+            <div class="icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+            <div class="icon-item"><span class="icon-emoji">⚡</span><span>Vite</span></div>
+            <div class="icon-item"><i class="devicon-sass-original colored"></i><span>Sass</span></div>
+            <div class="icon-item"><span class="icon-emoji">🔗</span><span>Axios</span></div>
+          </div>
+        </div>
+        <div class="skill-card reveal">
+          <h3>Tools &amp; Infra</h3>
+          <div class="icon-grid">
+            <div class="icon-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+            <div class="icon-item"><i class="devicon-nginx-original colored"></i><span>Nginx</span></div>
+            <div class="icon-item"><span class="icon-emoji">⚙️</span><span>Actions</span></div>
+            <div class="icon-item"><i class="devicon-jenkins-line colored"></i><span>Jenkins</span></div>
+            <div class="icon-item"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+            <div class="icon-item"><i class="devicon-firebase-plain colored"></i><span>Firebase</span></div>
+            <div class="icon-item"><i class="devicon-jira-plain colored"></i><span>Jira</span></div>
+            <div class="icon-item"><i class="devicon-intellij-plain colored"></i><span>IntelliJ</span></div>
+            <div class="icon-item"><i class="devicon-vscode-plain colored"></i><span>VS Code</span></div>
+            <div class="icon-item"><span class="icon-emoji">🖥️</span><span>Eclipse</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section section-alt" id="projects">
+    <div class="section-inner">
+
+      <!-- Featured Project -->
+      <div class="section-head">
+        <h2 class="section-title"><span class="dot">●</span> Featured Project</h2>
+        <a href="#other-projects" class="section-link">모든 프로젝트 보기 →</a>
+      </div>
+
+      <article class="pcard pcard-featured reveal">
+        <div class="pcard-media">
+          <div class="pcard-badges">
+            <span class="pcard-badge">메인 프로젝트</span>
+            <span class="pcard-badge pcard-badge-outline">팀 프로젝트</span>
+          </div>
+          <img src="https://raw.githubusercontent.com/tailsProject/Tails/main/image.png" alt="Tails 서비스 화면" loading="lazy">
+        </div>
+        <div class="pcard-body">
+          <h3>Tails</h3>
+          <p class="pcard-desc">
+            반려동물과 함께 여행할 수 있는 장소, 숙소, 맛집 정보를 검색하고 여행 일정을 계획·공유할 수 있는 서비스입니다.
+            기획을 맡아 서비스 방향을 정의하고, 장소 검색·개인화 추천 로직 설계부터 화면 구현까지 백엔드·프론트엔드를 아우르며 개발했습니다.
+          </p>
+          <div class="tags">
+            <span class="tag">Spring Boot</span>
+            <span class="tag">React</span>
+            <span class="tag">MySQL</span>
+            <span class="tag">Redis</span>
+            <span class="tag">Docker</span>
+            <span class="tag">Jenkins</span>
+            <span class="tag">AWS</span>
+          </div>
+          <ul class="feature-list">
+            <li><span class="f-icon">🐾</span> 반려동물 동반 가능 장소·리뷰·평점 검색</li>
+            <li><span class="f-icon">💬</span> 게시글·댓글 좋아요, 북마크 커뮤니티 기능</li>
+            <li><span class="f-icon">📍</span> 지도 기반 탐색 및 키워드·카테고리·반경 검색</li>
+            <li><span class="f-icon">⚙️</span> AWS 배포, Docker·Jenkins·GitHub Actions CI/CD 구축</li>
+          </ul>
+          <div class="pcard-cta">
+            <a href="tails.html" class="btn btn-primary btn-sm">프로젝트 상세 보기 →</a>
+            <a href="https://github.com/tailsProject/Tails" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              GitHub
+            </a>
+            <a href="https://mytails.site" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">서비스 바로가기 ↗</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Other Projects -->
+      <div class="section-head" id="other-projects" style="margin-top:64px;">
+        <h2 class="section-title"><span class="dot">●</span> Other Projects</h2>
+      </div>
+      <div class="other-grid">
+        <article class="pcard pcard-other reveal">
+          <div class="pcard-media pcard-media-code">
+            <div class="code-window">
+              <div class="code-dots"><span></span><span></span><span></span></div>
+              <pre>&gt; node maple-shooting-game.js
+
+  🍄 spawn mushroom
+  🏹 arrow fired
+  💥 hit! +1 score
+  _</pre>
+            </div>
+          </div>
+          <div class="pcard-body">
+            <h3>Maple Shooting Game</h3>
+            <p class="pcard-desc">메이플스토리 주황버섯을 모티브로 한 바닐라 JS 브라우저 슈팅 게임. 첫 자바스크립트 입문 프로젝트입니다.</p>
+            <div class="tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span>
+            </div>
+            <a href="https://github.com/pyj-0313/Maple-Shooting-game" target="_blank" rel="noopener noreferrer" class="pcard-link-out">GitHub ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE + EDUCATION -->
+  <section class="section" id="experience-education">
+    <div class="section-inner">
+      <div class="exed-grid">
+        <div class="exed-card reveal" id="experience">
+          <h3><span class="dot">●</span> Experience</h3>
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <span class="timeline-icon">💼</span>
+              <div>
+                <h4>국비 풀스택 개발자 양성과정</h4>
+                <p>코리아IT아카데미 대구점 · 공공데이터 융합 (113일 · 900시간)</p>
+              </div>
+            </div>
+            <div class="timeline-side">
+              <span class="badge badge-done">수료</span>
+              <span class="timeline-date">2026.02 – 2026.08</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exed-card reveal" id="education">
+          <h3><span class="dot">●</span> Education</h3>
+          <div class="timeline-item">
+            <div class="timeline-main">
+              <span class="timeline-icon">🎓</span>
+              <div>
+                <h4>경일대학교</h4>
+                <p>스마트팩토리융합학과 · 조기취업계약학과</p>
+              </div>
+            </div>
+            <div class="timeline-side">
+              <span class="timeline-date">2025 졸업</span>
+            </div>
+          </div>
+
+          <div class="cert-box">
+            <p class="cert-box-title">🏅 자격 &amp; 어학</p>
+            <ul class="cert-list">
+              <li><span class="cert-dot"></span> 정보처리기사 — 필기 합격 · 실기 준비중</li>
+              <li><span class="cert-dot"></span> SQLD — 응시예정</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section-alt" id="contact">
+    <div class="section-inner">
+      <div class="contact-card reveal">
+        <div class="contact-copy">
+          <h2><span class="dot">●</span> Let's Connect</h2>
+          <p>새로운 기술을 배우고, 좋은 사람들과 함께 성장하고 싶습니다.</p>
+          <div class="contact-links">
+            <a href="mailto:pyjun0313@gmail.com" class="contact-link">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6 8.5 7 8.5-7"/></svg>
+              pyjun0313@gmail.com
+            </a>
+            <a href="https://github.com/pyj-0313" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.09 3.29 9.4 7.86 10.93.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.52-1.34-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.76.12 3.05.74.8 1.18 1.83 1.18 3.09 0 4.43-2.69 5.41-5.25 5.69.41.36.78 1.07.78 2.16 0 1.56-.01 2.82-.01 3.2 0 .31.21.67.8.56A10.52 10.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"/></svg>
+              github.com/pyj-0313
+            </a>
+          </div>
+        </div>
+        <div class="contact-illustration" aria-hidden="true">🐶</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 Park Youngjun. All rights reserved.</p>
+  <button class="to-top" id="toTop" aria-label="맨 위로">↑</button>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>

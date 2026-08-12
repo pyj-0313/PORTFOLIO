@@ -54,7 +54,7 @@ story.append(Paragraph("About", styles['h2']))
 story.append(Paragraph(
     "국비 풀스택 과정을 통해 Java·Spring부터 React까지 기본기를 쌓았습니다. "
     "기획부터 백엔드, 프론트엔드까지 서비스의 처음과 끝을 직접 만들어보는 과정에 관심이 많고, "
-    "Tails 프로젝트에서 그 과정을 함께 경험했습니다. 문제를 정의하고 끝까지 책임지고 풀어냅니다.",
+    "사용자의 문제를 해결하는 개발자로 꾸준히 성장하고 싶습니다.",
     styles['body']
 ))
 

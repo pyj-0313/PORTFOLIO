@@ -71,6 +71,60 @@ document.querySelectorAll('.diagram-tabs').forEach((tabGroup) => {
   });
 });
 
+// Screenshot lightbox — used on project detail pages
+const screenImgs = Array.from(document.querySelectorAll('.screen-img'));
+if (screenImgs.length) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + screenImgs.length) % screenImgs.length;
+    const img = screenImgs[currentIndex];
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = img.closest('figure').querySelector('figcaption').textContent;
+  }
+
+  function openLightbox(index) {
+    showImage(index);
+    lightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  screenImgs.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(index);
+      }
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => showImage(currentIndex - 1));
+  lightboxNext.addEventListener('click', () => showImage(currentIndex + 1));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.hidden) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+    if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+  });
+}
+
 // Reveal on scroll
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(

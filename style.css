@@ -405,6 +405,8 @@ img { max-width: 100%; }
 }
 .pcard-media { position: relative; overflow: hidden; background: var(--bg-alt); min-height: 320px; }
 .pcard-media img { width: 100%; height: 100%; object-fit: cover; object-position: right top; display: block; }
+.pcard-media-contain { background: #fff1e6; display: flex; align-items: center; }
+.pcard-media-contain img { object-fit: contain; object-position: center; }
 .pcard-badges { position: absolute; top: 16px; left: 16px; display: flex; gap: 8px; z-index: 1; }
 .pcard-badge {
   font-size: 11px; font-weight: 700;

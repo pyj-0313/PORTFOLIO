@@ -47,14 +47,6 @@ if (navToggle && navLinks) {
   });
 }
 
-// Back to top
-const toTop = document.getElementById('toTop');
-if (toTop) {
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
 // Diagram tabs (Architecture / ERD) — used on project detail pages
 document.querySelectorAll('.diagram-tabs').forEach((tabGroup) => {
   const tabs = tabGroup.querySelectorAll('.diagram-tab');

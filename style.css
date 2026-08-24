@@ -743,18 +743,6 @@ img { max-width: 100%; }
 }
 .contact-link:hover .brand-badge { transform: scale(1.15) rotate(-8deg); }
 
-.contact-illustration {
-  flex-shrink: 0;
-  display: flex;
-  animation: dogBob 3.2s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-@keyframes dogBob {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(-3deg); }
-}
-.contact-illustration:hover { animation-play-state: paused; }
-
 /* FOOTER */
 .footer {
   padding: 20px 24px;

@@ -117,6 +117,56 @@ if (screenImgs.length) {
   });
 }
 
+// Hero banner cursor spotlight + parallax
+const heroBanner = document.querySelector('.hero-banner');
+const heroBannerImg = document.querySelector('.hero-banner-img');
+if (heroBanner && heroBannerImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroBanner.addEventListener('mousemove', (e) => {
+    const rect = heroBanner.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    heroBanner.style.setProperty('--mx', `${px * 100}%`);
+    heroBanner.style.setProperty('--my', `${py * 100}%`);
+    heroBannerImg.style.setProperty('--tx', `${(px - 0.5) * -16}px`);
+    heroBannerImg.style.setProperty('--ty', `${(py - 0.5) * -16}px`);
+  });
+  heroBanner.addEventListener('mouseleave', () => {
+    heroBannerImg.style.setProperty('--tx', '0px');
+    heroBannerImg.style.setProperty('--ty', '0px');
+  });
+}
+
+// Hero stats count-up
+const countEls = document.querySelectorAll('[data-count-to]');
+if (countEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const countObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.countTo, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1200;
+        const start = performance.now();
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.round(target * eased) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        countObserver.unobserve(el);
+      });
+    },
+    { threshold: 0.5 }
+  );
+  countEls.forEach((el) => countObserver.observe(el));
+} else {
+  countEls.forEach((el) => {
+    el.textContent = el.dataset.countTo + (el.dataset.suffix || '');
+  });
+}
+
 // Reveal on scroll
 const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(

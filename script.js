@@ -117,22 +117,37 @@ if (screenImgs.length) {
   });
 }
 
-// Hero banner cursor spotlight + parallax
-const heroBanner = document.querySelector('.hero-banner');
-const heroBannerImg = document.querySelector('.hero-banner-img');
-if (heroBanner && heroBannerImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  heroBanner.addEventListener('mousemove', (e) => {
-    const rect = heroBanner.getBoundingClientRect();
+// Hero card cursor spotlight + parallax
+const heroCard = document.querySelector('.hero-aurora-card');
+const heroCardImg = document.querySelector('.hero-aurora-card-img');
+if (heroCard && heroCardImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  heroCard.addEventListener('mousemove', (e) => {
+    const rect = heroCard.getBoundingClientRect();
     const px = (e.clientX - rect.left) / rect.width;
     const py = (e.clientY - rect.top) / rect.height;
-    heroBanner.style.setProperty('--mx', `${px * 100}%`);
-    heroBanner.style.setProperty('--my', `${py * 100}%`);
-    heroBannerImg.style.setProperty('--tx', `${(px - 0.5) * -16}px`);
-    heroBannerImg.style.setProperty('--ty', `${(py - 0.5) * -16}px`);
+    heroCard.style.setProperty('--mx', `${px * 100}%`);
+    heroCard.style.setProperty('--my', `${py * 100}%`);
+    heroCardImg.style.setProperty('--tx', `${(px - 0.5) * -14}px`);
+    heroCardImg.style.setProperty('--ty', `${(py - 0.5) * -14}px`);
   });
-  heroBanner.addEventListener('mouseleave', () => {
-    heroBannerImg.style.setProperty('--tx', '0px');
-    heroBannerImg.style.setProperty('--ty', '0px');
+  heroCard.addEventListener('mouseleave', () => {
+    heroCardImg.style.setProperty('--tx', '0px');
+    heroCardImg.style.setProperty('--ty', '0px');
+  });
+}
+
+// Magnetic buttons
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.btn').forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.18}px, ${y * 0.4}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = '';
+    });
   });
 }
 

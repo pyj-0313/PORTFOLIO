@@ -511,6 +511,18 @@ img { max-width: 100%; }
   color: var(--text-dim);
   line-height: 1.7;
 }
+.value-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text);
+  transition: opacity 0.2s ease;
+}
+.value-link svg { flex-shrink: 0; }
+.value-link:hover { opacity: 0.7; }
 
 .skill-hashtags {
   display: flex;

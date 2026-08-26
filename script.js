@@ -167,6 +167,31 @@ if (countEls.length && !window.matchMedia('(prefers-reduced-motion: reduce)').ma
   });
 }
 
+// Certificate lightbox popup
+const certTrigger = document.getElementById('certTrigger');
+const certLightbox = document.getElementById('certLightbox');
+if (certTrigger && certLightbox) {
+  const certLightboxClose = document.getElementById('certLightboxClose');
+
+  function openCertLightbox() {
+    certLightbox.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCertLightbox() {
+    certLightbox.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  certTrigger.addEventListener('click', openCertLightbox);
+  certLightboxClose.addEventListener('click', closeCertLightbox);
+  certLightbox.addEventListener('click', (e) => {
+    if (e.target === certLightbox) closeCertLightbox();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!certLightbox.hidden && e.key === 'Escape') closeCertLightbox();
+  });
+}
+
 // Custom cursor (mouse pointers only, respects reduced motion)
 if (
   window.matchMedia('(pointer: fine)').matches &&

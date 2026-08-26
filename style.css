@@ -1050,37 +1050,26 @@ img { max-width: 100%; }
 }
 
 /* CUSTOM CURSOR */
-.cursor-dot, .cursor-ring { display: none; }
+.cursor-arrow { display: none; }
 html.has-custom-cursor { cursor: none; }
 html.has-custom-cursor a,
 html.has-custom-cursor button { cursor: none; }
-html.has-custom-cursor .cursor-dot,
-html.has-custom-cursor .cursor-ring {
+html.has-custom-cursor .cursor-arrow {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
-  border-radius: 50%;
+  width: 22px;
+  height: 22px;
   pointer-events: none;
   z-index: 9999;
-}
-html.has-custom-cursor .cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
   transition: opacity 0.2s ease;
 }
-html.has-custom-cursor .cursor-ring {
-  width: 34px;
-  height: 34px;
-  border: 1.5px solid var(--accent);
-  opacity: 0.55;
-  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+html.has-custom-cursor .cursor-arrow svg {
+  display: block;
+  transform-origin: 20% 12%;
+  transition: transform 0.15s ease;
 }
-html.has-custom-cursor .cursor-ring.is-hover {
-  width: 54px;
-  height: 54px;
-  opacity: 0.9;
-  background: rgba(255, 138, 61, 0.1);
+html.has-custom-cursor .cursor-arrow.is-hover svg {
+  transform: scale(1.3);
 }
-html.has-custom-cursor .cursor-dot.is-hover { opacity: 0; }

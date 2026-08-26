@@ -172,52 +172,24 @@ if (
   window.matchMedia('(pointer: fine)').matches &&
   !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 ) {
-  const cursorDot = document.createElement('div');
-  cursorDot.className = 'cursor-dot';
-  const cursorRing = document.createElement('div');
-  cursorRing.className = 'cursor-ring';
-  document.body.append(cursorDot, cursorRing);
+  const cursorArrow = document.createElement('div');
+  cursorArrow.className = 'cursor-arrow';
+  cursorArrow.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24"><path d="M5 3L5 19.5L9.5 15.5L12.5 21.5L15.3 20.1L12.3 14.1L18.5 14.1Z" fill="#ff8a3d" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/></svg>';
+  document.body.append(cursorArrow);
   document.documentElement.classList.add('has-custom-cursor');
 
-  let mouseX = -100;
-  let mouseY = -100;
-  let ringX = -100;
-  let ringY = -100;
-
   window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorDot.style.transform = `translate(${mouseX}px, ${mouseY}px) translate(-50%, -50%)`;
+    cursorArrow.style.transform = `translate(${e.clientX - 3}px, ${e.clientY - 2}px)`;
   });
-
-  function animateRing() {
-    ringX += (mouseX - ringX) * 0.18;
-    ringY += (mouseY - ringY) * 0.18;
-    cursorRing.style.transform = `translate(${ringX}px, ${ringY}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateRing);
-  }
-  requestAnimationFrame(animateRing);
 
   document.addEventListener('mouseover', (e) => {
-    if (e.target.closest('a, button')) {
-      cursorRing.classList.add('is-hover');
-      cursorDot.classList.add('is-hover');
-    }
+    if (e.target.closest('a, button')) cursorArrow.classList.add('is-hover');
   });
   document.addEventListener('mouseout', (e) => {
-    if (e.target.closest('a, button')) {
-      cursorRing.classList.remove('is-hover');
-      cursorDot.classList.remove('is-hover');
-    }
+    if (e.target.closest('a, button')) cursorArrow.classList.remove('is-hover');
   });
-  document.addEventListener('mouseleave', () => {
-    cursorDot.style.opacity = '0';
-    cursorRing.style.opacity = '0';
-  });
-  document.addEventListener('mouseenter', () => {
-    cursorDot.style.opacity = '';
-    cursorRing.style.opacity = '';
-  });
+  document.addEventListener('mouseleave', () => { cursorArrow.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { cursorArrow.style.opacity = ''; });
 }
 
 // Reveal on scroll

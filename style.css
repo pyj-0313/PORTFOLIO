@@ -1048,3 +1048,39 @@ img { max-width: 100%; }
   .about-photo-frame { aspect-ratio: 16 / 10; max-width: 320px; margin: 0 auto; }
   .about-quick-facts { align-items: center; text-align: center; max-width: 320px; margin-left: auto; margin-right: auto; }
 }
+
+/* CUSTOM CURSOR */
+.cursor-dot, .cursor-ring { display: none; }
+html.has-custom-cursor { cursor: none; }
+html.has-custom-cursor a,
+html.has-custom-cursor button { cursor: none; }
+html.has-custom-cursor .cursor-dot,
+html.has-custom-cursor .cursor-ring {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+}
+html.has-custom-cursor .cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  transition: opacity 0.2s ease;
+}
+html.has-custom-cursor .cursor-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--accent);
+  opacity: 0.55;
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+}
+html.has-custom-cursor .cursor-ring.is-hover {
+  width: 54px;
+  height: 54px;
+  opacity: 0.9;
+  background: rgba(255, 138, 61, 0.1);
+}
+html.has-custom-cursor .cursor-dot.is-hover { opacity: 0; }

@@ -268,37 +268,37 @@
 
       <div class="trouble-card reveal">
         <div class="trouble-head">
-          <span class="trouble-tag">SECURITY</span>
-          <h4>Refresh Token을 Access Token으로 오용 가능한 취약점</h4>
+          <span class="trouble-tag">DATABASE · JPA</span>
+          <h4>Review PK 필드명 불일치로 서버 구동 실패</h4>
         </div>
         <div class="trouble-body">
-          <p><strong>Problem</strong> Access·Refresh Token이 같은 시크릿 키로 서명돼 있어, Refresh Token을 Authorization 헤더에 넣어도 일반 API가 호출됨.</p>
-          <p><strong>Approach</strong> 토큰 발급 시 <code>type</code> 클레임을 추가해 access/refresh를 구분하고, 필터·재발급 API에서 토큰 종류를 검증하도록 수정.</p>
-          <p><strong>Result</strong> 탈취된 Refresh Token으로 일반 API를 호출하는 경로를 차단.</p>
+          <p><strong>Problem</strong> 리뷰 이미지 조회 파생 쿼리 <code>findByReviewIdOrderByCreatedAtAsc</code>가 <code>Image</code> 엔티티 자체의 필드를 찾으려 함. <code>Review</code>의 PK가 관례적인 <code>id</code>가 아니라 <code>reviewId</code>라서 <code>review</code> 연관관계를 타고 들어가는 경로로 자동 인식되지 못해, 애플리케이션 기동 시점에 쿼리 파생 자체가 실패.</p>
+          <p><strong>Approach</strong> 메서드명을 <code>findByReview_ReviewIdOrderByCreatedAtAsc</code>로 수정해, 언더스코어로 "review 연관관계 안의 reviewId 필드"라는 프로퍼티 경로를 명시적으로 지정.</p>
+          <p><strong>Result</strong> 쿼리 파생 오류 해결로 서버 정상 기동, 리뷰 이미지 조회 API 정상화.</p>
         </div>
         <div class="flow-diagram">
           <div class="flow-col flow-col-before">
             <span class="flow-col-label">BEFORE · 문제 흐름</span>
             <div class="flow-steps">
-              <div class="flow-step">탈취된 Refresh Token을 Authorization 헤더에 삽입</div>
+              <div class="flow-step">애플리케이션 기동, JPA가 Repository 스캔</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step">필터가 서명 검증만 수행</div>
+              <div class="flow-step">findByReviewId 메서드명 파싱 시도</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step">토큰 종류 구분 없이 인증 처리</div>
+              <div class="flow-step">Image 엔티티에 reviewId 필드 없음 → 경로 해석 실패</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step flow-step-result">일반 API 정상 호출됨</div>
+              <div class="flow-step flow-step-result">쿼리 생성 실패, 서버 기동 자체가 안 됨</div>
             </div>
           </div>
           <div class="flow-col flow-col-after">
             <span class="flow-col-label">AFTER · 해결 구조</span>
             <div class="flow-steps">
-              <div class="flow-step">토큰 발급 시 type(access/refresh) 클레임 부여</div>
+              <div class="flow-step">findByReview_ReviewId로 메서드명 수정</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step">필터가 access 토큰인지 검증</div>
+              <div class="flow-step">review 연관관계 → 그 안의 reviewId로 경로 인식</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step">refresh 토큰이면 인증 거부</div>
+              <div class="flow-step">쿼리 파생 정상 성공</div>
               <div class="flow-arrow">↓</div>
-              <div class="flow-step flow-step-result">탈취 토큰으로 API 호출 차단</div>
+              <div class="flow-step flow-step-result">서버 정상 기동, 리뷰 이미지 조회 정상 동작</div>
             </div>
           </div>
         </div>

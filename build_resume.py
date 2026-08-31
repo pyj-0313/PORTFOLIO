@@ -7,9 +7,10 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, Tabl
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
-FONT_DIR = "C:/Windows/Fonts"
-pdfmetrics.registerFont(TTFont('Malgun', f'{FONT_DIR}/malgun.ttf'))
-pdfmetrics.registerFont(TTFont('MalgunBold', f'{FONT_DIR}/malgunbd.ttf'))
+import os
+FONT_DIR = os.path.expanduser("~/Library/Fonts")
+pdfmetrics.registerFont(TTFont('Malgun', f'{FONT_DIR}/NanumGothic-Regular.ttf'))
+pdfmetrics.registerFont(TTFont('MalgunBold', f'{FONT_DIR}/NanumGothic-Bold.ttf'))
 
 FONT_BODY = 'Malgun'
 FONT_HEAD = 'MalgunBold'
@@ -52,9 +53,10 @@ story.append(Spacer(1, 4))
 # About
 story.append(Paragraph("About", styles['h2']))
 story.append(Paragraph(
-    "국비 풀스택 과정을 통해 Java·Spring부터 React까지 기본기를 쌓았습니다. "
-    "기획부터 백엔드, 프론트엔드까지 서비스의 처음과 끝을 직접 만들어보는 과정에 관심이 많고, "
-    "사용자의 문제를 해결하는 개발자로 꾸준히 성장하고 싶습니다.",
+    "컴퓨터에 대한 관심에서 출발해 대학교 전공 수업에서 코딩을 처음 접한 뒤 개발에 흥미를 느껴 "
+    "본격적으로 공부를 시작했습니다. 기획부터 백엔드, 프론트엔드까지 서비스의 처음과 끝을 직접 "
+    "만들어보는 과정에 관심이 많고, 새로운 기술을 배워 문제를 해결하는 개발자로 꾸준히 성장하고 "
+    "싶습니다.",
     styles['body']
 ))
 
@@ -79,7 +81,7 @@ story.append(skills_table)
 # Experience
 story.append(Paragraph("Experience", styles['h2']))
 story.append(Paragraph("국비 풀스택 개발자 양성과정 &nbsp;&nbsp;<font color='#737373' size='8'>2026.02 – 2026.08 (수료)</font>", styles['itemTitle']))
-story.append(Paragraph("코리아IT아카데미 대구점 · 공공데이터 융합 (113일 · 900시간)", styles['itemMeta']))
+story.append(Paragraph("코리아AI아카데미 대구점 · 공공데이터 융합 (113일 · 900시간)", styles['itemMeta']))
 story.append(Spacer(1, 6))
 
 # Education
@@ -87,7 +89,7 @@ story.append(Paragraph("Education", styles['h2']))
 story.append(Paragraph("경일대학교 &nbsp;&nbsp;<font color='#737373' size='8'>2025 졸업</font>", styles['itemTitle']))
 story.append(Paragraph("스마트팩토리융합학과", styles['itemMeta']))
 story.append(Spacer(1, 4))
-story.append(Paragraph("자격 &amp; 어학: 정보처리기사(필기 합격·실기 준비중), SQLD(응시예정)", styles['bodyDim']))
+story.append(Paragraph("자격 &amp; 면허: 정보처리기사(필기 합격·실기 준비중), SQLD(응시예정) · 운전면허 1종 보통(2019.08 취득)", styles['bodyDim']))
 
 # Projects
 story.append(Paragraph("Projects", styles['h2']))

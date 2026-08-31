@@ -553,26 +553,10 @@ button.value-link {
   color: var(--text);
   margin-bottom: 10px;
 }
-.skill-lane-viewport {
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
 .skill-lane-track {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
-  width: max-content;
-  animation: skillMarquee 26s linear infinite;
-}
-.skill-lane-track-reverse { animation-direction: reverse; }
-.skill-lane:hover .skill-lane-track { animation-play-state: paused; }
-@keyframes skillMarquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .skill-lane-track { animation: none; }
-  .skill-lane-viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
 }
 .skill-chip {
   flex-shrink: 0;

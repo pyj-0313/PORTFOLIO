@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>박영준 · Full-Stack Developer</title>
 <meta name="description" content="박영준 - 풀스택 개발자 포트폴리오">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff8a3d'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Arial, sans-serif' font-size='16' font-weight='700' fill='%23fff'%3EP%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/devicon@2.15.1/devicon.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
@@ -22,8 +23,7 @@
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#experience">Experience</a>
+      <a href="#experience-education">Timeline</a>
       <a href="#contact">Contact</a>
     </nav>
     <div class="nav-actions">
@@ -128,7 +128,7 @@
             아직 배워야 할 것이 많지만, 새로운 문제를 마주하고 해결 방법을 찾아가는 과정 자체를
             즐기며 꾸준히 성장하고 있습니다.
           </p>
-          <a href="#experience" class="section-link">자세히 보기 →</a>
+          <a href="#experience-education" class="section-link">자세히 보기 →</a>
 
           <div class="about-values-list">
             <div class="about-value-row">
@@ -178,72 +178,41 @@
       <div class="skill-lanes reveal">
         <div class="skill-lane">
           <span class="skill-lane-label">Backend</span>
-          <div class="skill-lane-viewport">
           <div class="skill-lane-track">
             <span class="skill-chip"><i class="devicon-java-plain colored"></i>Java</span>
             <span class="skill-chip"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
             <span class="skill-chip"><span class="icon-emoji">🐻</span>Hibernate</span>
             <span class="skill-chip"><i class="devicon-mysql-plain colored"></i>MySQL</span>
             <span class="skill-chip"><i class="devicon-redis-plain colored"></i>Redis</span>
-            <span class="skill-chip"><i class="devicon-java-plain colored"></i>Java</span>
-            <span class="skill-chip"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
-            <span class="skill-chip"><span class="icon-emoji">🐻</span>Hibernate</span>
-            <span class="skill-chip"><i class="devicon-mysql-plain colored"></i>MySQL</span>
-            <span class="skill-chip"><i class="devicon-redis-plain colored"></i>Redis</span>
-          </div>
           </div>
         </div>
         <div class="skill-lane">
           <span class="skill-lane-label">Frontend</span>
-          <div class="skill-lane-viewport">
-          <div class="skill-lane-track skill-lane-track-reverse">
-            <span class="skill-chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
+          <div class="skill-lane-track">
             <span class="skill-chip"><i class="devicon-react-original colored"></i>React</span>
             <span class="skill-chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
             <span class="skill-chip"><span class="icon-emoji">⚡</span>Vite</span>
             <span class="skill-chip"><i class="devicon-sass-original colored"></i>Sass</span>
             <span class="skill-chip"><span class="icon-emoji">🔗</span>Axios</span>
-            <span class="skill-chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
-            <span class="skill-chip"><i class="devicon-react-original colored"></i>React</span>
-            <span class="skill-chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
-            <span class="skill-chip"><span class="icon-emoji">⚡</span>Vite</span>
-            <span class="skill-chip"><i class="devicon-sass-original colored"></i>Sass</span>
-            <span class="skill-chip"><span class="icon-emoji">🔗</span>Axios</span>
-          </div>
           </div>
         </div>
         <div class="skill-lane">
           <span class="skill-lane-label">DevOps</span>
-          <div class="skill-lane-viewport">
           <div class="skill-lane-track">
             <span class="skill-chip"><i class="devicon-docker-plain colored"></i>Docker</span>
             <span class="skill-chip"><i class="devicon-nginx-original colored"></i>Nginx</span>
-            <span class="skill-chip"><span class="icon-emoji">⚙️</span>Actions</span>
+            <span class="skill-chip"><span class="icon-emoji">⚙️</span>GitHub Actions</span>
             <span class="skill-chip"><i class="devicon-jenkins-line colored"></i>Jenkins</span>
             <span class="skill-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
             <span class="skill-chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
-            <span class="skill-chip"><i class="devicon-docker-plain colored"></i>Docker</span>
-            <span class="skill-chip"><i class="devicon-nginx-original colored"></i>Nginx</span>
-            <span class="skill-chip"><span class="icon-emoji">⚙️</span>Actions</span>
-            <span class="skill-chip"><i class="devicon-jenkins-line colored"></i>Jenkins</span>
-            <span class="skill-chip"><i class="devicon-amazonwebservices-plain-wordmark colored"></i>AWS</span>
-            <span class="skill-chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
-          </div>
           </div>
         </div>
         <div class="skill-lane">
           <span class="skill-lane-label">Dev Tools</span>
-          <div class="skill-lane-viewport">
-          <div class="skill-lane-track skill-lane-track-reverse">
+          <div class="skill-lane-track">
             <span class="skill-chip"><i class="devicon-jira-plain colored"></i>Jira</span>
             <span class="skill-chip"><i class="devicon-intellij-plain colored"></i>IntelliJ</span>
             <span class="skill-chip"><i class="devicon-vscode-plain colored"></i>VS Code</span>
-            <span class="skill-chip"><span class="icon-emoji">🖥️</span>Eclipse</span>
-            <span class="skill-chip"><i class="devicon-jira-plain colored"></i>Jira</span>
-            <span class="skill-chip"><i class="devicon-intellij-plain colored"></i>IntelliJ</span>
-            <span class="skill-chip"><i class="devicon-vscode-plain colored"></i>VS Code</span>
-            <span class="skill-chip"><span class="icon-emoji">🖥️</span>Eclipse</span>
-          </div>
           </div>
         </div>
       </div>
@@ -357,7 +326,7 @@
           </div>
         </div>
 
-        <div class="timeline-v2-item reveal" id="education">
+        <div class="timeline-v2-item reveal">
           <div class="timeline-v2-marker"><span class="timeline-v2-dot"></span></div>
           <div class="timeline-v2-card">
             <span class="timeline-v2-date">2025 졸업</span>
@@ -371,7 +340,7 @@
           </div>
         </div>
 
-        <div class="timeline-v2-item reveal" id="experience">
+        <div class="timeline-v2-item reveal">
           <div class="timeline-v2-marker"><span class="timeline-v2-dot timeline-v2-dot-active"></span></div>
           <div class="timeline-v2-card">
             <span class="timeline-v2-date">2026.02 – 2026.08</span>

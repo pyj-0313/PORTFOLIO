@@ -89,7 +89,7 @@ story.append(Paragraph("Education", styles['h2']))
 story.append(Paragraph("경일대학교 &nbsp;&nbsp;<font color='#737373' size='8'>2025 졸업</font>", styles['itemTitle']))
 story.append(Paragraph("스마트팩토리융합학과", styles['itemMeta']))
 story.append(Spacer(1, 4))
-story.append(Paragraph("자격 &amp; 면허: 정보처리기사(필기 합격·실기 준비중), SQLD(응시예정) · 운전면허 1종 보통(2019.08 취득)", styles['bodyDim']))
+story.append(Paragraph("자격 &amp; 면허: 정보처리기사(2026.06 필기 합격·실기 준비중), SQLD(2026.08 응시예정) · 운전면허 1종 보통(2019.08 취득)", styles['bodyDim']))
 
 # Projects
 story.append(Paragraph("Projects", styles['h2']))
